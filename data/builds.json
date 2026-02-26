@@ -6,7 +6,8 @@
     "author": "Lyndz",
     "githubUrl": "https://github.com/lyndz/hyperfocus-timer",
     "demoUrl": "https://timer.hypercode.dev",
-    "tags": ["React", "Productivity", "Vibe Coding"]
+    "tags": ["React", "Productivity", "Vibe Coding"],
+    "status": "live"
   },
   {
     "id": "neon-snake",
@@ -15,7 +16,8 @@
     "author": "PixelNinja",
     "githubUrl": "https://github.com/pixelninja/neon-snake",
     "demoUrl": "https://neon-snake.vercel.app",
-    "tags": ["Game", "Canvas", "Retro"]
+    "tags": ["Game", "Canvas", "Retro"],
+    "status": "beta"
   },
   {
     "id": "agent-x-dashboard",
@@ -24,6 +26,7 @@
     "author": "System Architect",
     "githubUrl": "https://github.com/hypercode/agent-x",
     "demoUrl": "https://agent-x.hypercode.dev",
-    "tags": ["AI", "Dashboard", "Next.js"]
+    "tags": ["AI", "Dashboard", "Next.js"],
+    "status": "wip"
   }
 ]

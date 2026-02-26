@@ -1,8 +1,22 @@
 import { Build } from '../types/build';
 
+const statusColors = {
+  live: 'bg-green-500/10 text-green-400 border-green-500/20',
+  beta: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20',
+  wip: 'bg-pink-500/10 text-pink-400 border-pink-500/20',
+};
+
+const statusLabels = {
+  live: 'LIVE',
+  beta: 'BETA',
+  wip: 'WIP',
+};
+
 export function BuildCard({ build }: { build: Build }) {
+  const status = build.status || 'live';
+  
   return (
-    <div className="border border-zinc-800 bg-zinc-900/50 rounded-xl p-6 hover:border-blue-500/50 transition-all group hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/10">
+    <div className="border border-zinc-800 bg-zinc-900/50 rounded-xl p-6 hover:border-blue-500/50 transition-all group hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-500/10 flex flex-col h-full">
       <div className="flex justify-between items-start mb-4">
         <div>
           <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
@@ -12,13 +26,16 @@ export function BuildCard({ build }: { build: Build }) {
             by @{build.author}
           </span>
         </div>
+        <span className={`text-[10px] font-bold px-2 py-1 rounded border ${statusColors[status]}`}>
+          {statusLabels[status]}
+        </span>
       </div>
       
-      <p className="text-zinc-400 mb-6 text-sm leading-relaxed h-12 overflow-hidden">
+      <p className="text-zinc-400 mb-6 text-sm leading-relaxed line-clamp-2">
         {build.description}
       </p>
 
-      <div className="flex flex-wrap gap-2 mb-6">
+      <div className="flex flex-wrap gap-2 mb-6 mt-auto">
         {build.tags.map(tag => (
           <span key={tag} className="text-xs px-2 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">
             {tag}
@@ -26,7 +43,7 @@ export function BuildCard({ build }: { build: Build }) {
         ))}
       </div>
 
-      <div className="flex gap-4 mt-auto">
+      <div className="flex gap-4 pt-4 border-t border-zinc-800/50">
         <a 
           href={build.demoUrl}
           target="_blank"

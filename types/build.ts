@@ -6,4 +6,5 @@ export interface Build {
   githubUrl: string;
   demoUrl: string;
   tags: string[];
+  status?: 'live' | 'beta' | 'wip';
 }
