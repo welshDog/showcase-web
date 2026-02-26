@@ -1,32 +1,46 @@
-[
-  {
-    "id": "hyperfocus-timer",
-    "title": "HyperFocus Timer ⏲️",
-    "description": "A flow-state pomodoro timer designed for ADHD brains. Minimalist UI with ambient soundscapes.",
-    "author": "Lyndz",
-    "githubUrl": "https://github.com/lyndz/hyperfocus-timer",
-    "demoUrl": "https://timer.hypercode.dev",
-    "tags": ["React", "Productivity", "Vibe Coding"],
-    "status": "live"
+{
+  "featured": {
+    "id": "hyper-station",
+    "title": "HYPER STATION 1.0",
+    "subtitle": "The Ultimate Flow State Dashboard",
+    "video_url": "https://www.youtube.com/embed/dQw4w9WgXcQ", 
+    "description": "A spatial computing interface for managing multiple AI agents, tasks, and music in one immersive view. Built with React Three Fiber and Supabase.",
+    "primary_cta": { "label": "Launch Station", "url": "https://station.hypercode.dev" },
+    "secondary_cta": { "label": "Watch Trailer", "url": "https://youtube.com" }
   },
-  {
-    "id": "neon-snake",
-    "title": "Neon Snake 🐍",
-    "description": "Classic Snake game reimagined with a Cyberpunk 2077 aesthetic. Built with Canvas API.",
-    "author": "PixelNinja",
-    "githubUrl": "https://github.com/pixelninja/neon-snake",
-    "demoUrl": "https://neon-snake.vercel.app",
-    "tags": ["Game", "Canvas", "Retro"],
-    "status": "beta"
-  },
-  {
-    "id": "agent-x-dashboard",
-    "title": "Agent X Dashboard 🤖",
-    "description": "A multi-agent orchestration panel for managing AI workflows. Real-time websocket updates.",
-    "author": "System Architect",
-    "githubUrl": "https://github.com/hypercode/agent-x",
-    "demoUrl": "https://agent-x.hypercode.dev",
-    "tags": ["AI", "Dashboard", "Next.js"],
-    "status": "wip"
-  }
-]
+  "builds": [
+    {
+      "id": "bee-colony",
+      "title": "Bee Colony Simulator 🐝",
+      "description": "A complex emergence simulation where individual bees follow simple rules to create complex hive behavior.",
+      "status": "LIVE",
+      "tags": ["Simulation", "AI", "Canvas"],
+      "demo_url": "https://bees.hypercode.dev",
+      "source_url": "https://github.com/welshDog/bee-colony",
+      "image": "https://placehold.co/600x400/101010/FFF?text=Bee+Colony",
+      "author": "welshDog"
+    },
+    {
+      "id": "hyperfocus-timer",
+      "title": "HyperFocus Timer ⏲️",
+      "description": "Minimalist pomodoro timer with ambient lo-fi textures and spatial audio mixing.",
+      "status": "BETA",
+      "tags": ["React", "Audio", "Productivity"],
+      "demo_url": "https://timer.hypercode.dev",
+      "source_url": "https://github.com/lyndz/hyperfocus-timer",
+      "image": "https://placehold.co/600x400/050505/FFF?text=Timer",
+      "author": "Lyndz"
+    },
+    {
+      "id": "neon-snake",
+      "title": "Neon Snake 2077 🐍",
+      "description": "Cyberpunk-aesthetic snake game with particle effects and synthwave soundtrack.",
+      "status": "WIP",
+      "tags": ["Game", "Canvas", "Retro"],
+      "demo_url": "https://snake.hypercode.dev",
+      "source_url": "https://github.com/pixelninja/neon-snake",
+      "image": "https://placehold.co/600x400/200020/FFF?text=Neon+Snake",
+      "author": "PixelNinja"
+    }
+  ]
+}
