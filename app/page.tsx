@@ -50,7 +50,7 @@ export default function Home() {
           <div className="aspect-video w-full overflow-hidden rounded-2xl border border-white/10 shadow-2xl bg-black/60 relative group">
             <iframe
               className="w-full h-full"
-              src={featured.video_url}
+              src={`${featured.video_url}?modestbranding=1&rel=0&showinfo=0&controls=1`}
               title={featured.title}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -207,10 +207,12 @@ function BuildCard({ build }: { build: Build }) {
         </div>
       </div>
       <div className="p-5 flex flex-col gap-3 flex-1">
-        <div className="flex flex-col gap-1">
-          <h3 className="font-bold text-xl group-hover:text-emerald-300 transition">{build.title}</h3>
-          <p className="text-xs text-white/50 font-mono">by @{build.author}</p>
+        <div className="flex items-start justify-between gap-3">
+          <h3 className="font-bold text-xl group-hover:text-emerald-300 transition leading-tight">{build.title}</h3>
+          <StatusBadge status={build.status} />
         </div>
+        
+        <p className="text-xs text-white/50 font-mono -mt-1">by @{build.author}</p>
         
         <p className="text-sm text-white/80 line-clamp-3 leading-relaxed">{build.description}</p>
         
@@ -218,7 +220,7 @@ function BuildCard({ build }: { build: Build }) {
           {build.tags.map((tag) => (
             <span
               key={tag}
-              className="px-2.5 py-1 rounded-full bg-white/5 text-[10px] uppercase tracking-wider text-white/60 border border-white/5 group-hover:border-white/20 transition"
+              className="px-2.5 py-1 rounded-full bg-white/5 text-[10px] font-bold uppercase tracking-wider text-white/60 border border-white/5 group-hover:border-white/20 transition"
             >
               {tag}
             </span>

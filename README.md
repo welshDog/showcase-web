@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🐝 Hyperfocus Zone Showcase
 
-## Getting Started
+> A playground of agents, tools, games, and experiments built by neurodivergent devs for neurodivergent devs.
 
-First, run the development server:
+![Hyperfocus Zone](public/images/og-image.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This is the central community hub for the **Hyperfocus** ecosystem. It showcases builds, experiments, and tools created by @welshDog and the community.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Quick Start
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1.  **Clone the repo**
+    ```bash
+    git clone https://github.com/hypercode-lab/showcase-web.git
+    cd showcase-web
+    ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
 
-## Learn More
+3.  **Run the development server**
+    ```bash
+    npm run dev
+    ```
+    Open [http://localhost:3000](http://localhost:3000) to view the showcase.
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+*   **Framework**: Next.js 14+ (App Router)
+*   **Styling**: Tailwind CSS v4
+*   **Data**: JSON-based Registry (Zero-DB)
+*   **Deployment**: Vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🤝 Contributing
 
-## Deploy on Vercel
+Want to add your build to the showcase? It's easy!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1.  Fork this repository.
+2.  Edit `data/builds.json`.
+3.  Submit a Pull Request.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed instructions.
+
+## 📜 License
+
+MIT © [Hyperfocus Zone](https://hyperfocus.zone)
