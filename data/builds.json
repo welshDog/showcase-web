@@ -1,0 +1,29 @@
+[
+  {
+    "id": "hyperfocus-timer",
+    "title": "HyperFocus Timer ⏲️",
+    "description": "A flow-state pomodoro timer designed for ADHD brains. Minimalist UI with ambient soundscapes.",
+    "author": "Lyndz",
+    "githubUrl": "https://github.com/lyndz/hyperfocus-timer",
+    "demoUrl": "https://timer.hypercode.dev",
+    "tags": ["React", "Productivity", "Vibe Coding"]
+  },
+  {
+    "id": "neon-snake",
+    "title": "Neon Snake 🐍",
+    "description": "Classic Snake game reimagined with a Cyberpunk 2077 aesthetic. Built with Canvas API.",
+    "author": "PixelNinja",
+    "githubUrl": "https://github.com/pixelninja/neon-snake",
+    "demoUrl": "https://neon-snake.vercel.app",
+    "tags": ["Game", "Canvas", "Retro"]
+  },
+  {
+    "id": "agent-x-dashboard",
+    "title": "Agent X Dashboard 🤖",
+    "description": "A multi-agent orchestration panel for managing AI workflows. Real-time websocket updates.",
+    "author": "System Architect",
+    "githubUrl": "https://github.com/hypercode/agent-x",
+    "demoUrl": "https://agent-x.hypercode.dev",
+    "tags": ["AI", "Dashboard", "Next.js"]
+  }
+]
