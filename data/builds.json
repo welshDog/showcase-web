@@ -1,46 +1,79 @@
 {
   "featured": {
-    "id": "hyper-station",
-    "title": "HYPER STATION 1.0",
-    "subtitle": "The Ultimate Flow State Dashboard",
-    "video_url": "https://www.youtube.com/embed/dQw4w9WgXcQ", 
-    "description": "A spatial computing interface for managing multiple AI agents, tasks, and music in one immersive view. Built with React Three Fiber and Supabase.",
-    "primary_cta": { "label": "Launch Station", "url": "https://station.hypercode.dev" },
-    "secondary_cta": { "label": "Watch Trailer", "url": "https://youtube.com" }
+    "id": "hypercode-v2",
+    "title": "HyperCode V2.0",
+    "subtitle": "The Neurodivergent-First Programming Language",
+    "video_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "description": "Building HyperCode neurodivergent-first programming language | Resurrecting forgotten genius | AI-ready | Quantum-ready | Open source revolution",
+    "primary_cta": { "label": "View on GitHub", "url": "https://github.com/welshDog/HyperCode-V2.0" },
+    "secondary_cta": { "label": "Explore Repos", "url": "https://github.com/welshDog?tab=repositories" }
   },
   "builds": [
     {
-      "id": "bee-colony",
-      "title": "Bee Colony Simulator 🐝",
-      "description": "A complex emergence simulation where individual bees follow simple rules to create complex hive behavior.",
+      "id": "ultimate-adhd-brain-arcade",
+      "title": "ULTIMATE ADHD BRAIN ARCADE",
+      "description": "The World's First Professional-Grade Brain Training Platform designed specifically for ADHD and Neurodivergent Minds.",
       "status": "LIVE",
-      "tags": ["Simulation", "AI", "Canvas"],
-      "demo_url": "https://bees.hypercode.dev",
-      "source_url": "https://github.com/welshDog/bee-colony",
-      "image": "https://placehold.co/600x400/101010/FFF?text=Bee+Colony",
+      "tags": ["JavaScript", "ADHD", "Brain Training"],
+      "demo_url": "https://github.com/welshDog/-ULTIMATE-ADHD-BRAIN-ARCADE-",
+      "source_url": "https://github.com/welshDog/-ULTIMATE-ADHD-BRAIN-ARCADE-",
+      "image": "https://placehold.co/600x400/0a0a1a/00FF94?text=ADHD+Brain+Arcade",
       "author": "welshDog"
     },
     {
-      "id": "hyperfocus-timer",
-      "title": "HyperFocus Timer ⏲️",
-      "description": "Minimalist pomodoro timer with ambient lo-fi textures and spatial audio mixing.",
-      "status": "BETA",
-      "tags": ["React", "Audio", "Productivity"],
-      "demo_url": "https://timer.hypercode.dev",
-      "source_url": "https://github.com/lyndz/hyperfocus-timer",
-      "image": "https://placehold.co/600x400/050505/FFF?text=Timer",
-      "author": "Lyndz"
+      "id": "hyperfocus-3d-constellation",
+      "title": "Hyperfocus 3D Constellation",
+      "description": "The world's most advanced 3D repository visualization designed for neurodivergent minds.",
+      "status": "WIP",
+      "tags": ["JavaScript", "3D", "Visualization"],
+      "demo_url": "https://github.com/welshDog/-Hyperfocus-3D-Constellation",
+      "source_url": "https://github.com/welshDog/-Hyperfocus-3D-Constellation",
+      "image": "https://placehold.co/600x400/0a0a1a/A855F7?text=3D+Constellation",
+      "author": "welshDog"
     },
     {
-      "id": "neon-snake",
-      "title": "Neon Snake 2077 🐍",
-      "description": "Cyberpunk-aesthetic snake game with particle effects and synthwave soundtrack.",
+      "id": "hyperfocus-ide-broski",
+      "title": "HyperFocus IDE BROski v1",
+      "description": "Neurodivergent-first IDE with AI agent swarm - Fresh, clean, WORKING.",
+      "status": "BETA",
+      "tags": ["Python", "AI", "IDE"],
+      "demo_url": "https://github.com/welshDog/HyperFocus-IDE-BROski-v1",
+      "source_url": "https://github.com/welshDog/HyperFocus-IDE-BROski-v1",
+      "image": "https://placehold.co/600x400/0a0a1a/00BFFF?text=HyperFocus+IDE",
+      "author": "welshDog"
+    },
+    {
+      "id": "github-caretaker",
+      "title": "My GitHub CareTaker",
+      "description": "AI-powered GitHub manager that scans repos, finds duplicates, generates cleanup scripts.",
+      "status": "LIVE",
+      "tags": ["Python", "AI", "Automation"],
+      "demo_url": "https://github.com/welshDog/My-GitHub-CareTaker",
+      "source_url": "https://github.com/welshDog/My-GitHub-CareTaker",
+      "image": "https://placehold.co/600x400/0a0a1a/FF6B35?text=GitHub+CareTaker",
+      "author": "welshDog"
+    },
+    {
+      "id": "the-hypercode",
+      "title": "THE HYPERCODE",
+      "description": "Multi-paradigm programming language (Classical, Quantum, Molecular) with textual + visual syntax. Accessibility-first design for neurodivergent brains.",
       "status": "WIP",
-      "tags": ["Game", "Canvas", "Retro"],
-      "demo_url": "https://snake.hypercode.dev",
-      "source_url": "https://github.com/pixelninja/neon-snake",
-      "image": "https://placehold.co/600x400/200020/FFF?text=Neon+Snake",
-      "author": "PixelNinja"
+      "tags": ["Python", "Quantum", "Language"],
+      "demo_url": "https://github.com/welshDog/THE-HYPERCODE",
+      "source_url": "https://github.com/welshDog/THE-HYPERCODE",
+      "image": "https://placehold.co/600x400/0a0a1a/FFD700?text=THE+HYPERCODE",
+      "author": "welshDog"
+    },
+    {
+      "id": "github-hyper-agent-broski",
+      "title": "GitHub Hyper Agent BROski",
+      "description": "AI agent crew for GitHub automation - issues, PRs, repo management built for neurodivergent devs.",
+      "status": "LIVE",
+      "tags": ["AI", "Agents", "GitHub"],
+      "demo_url": "https://github.com/welshDog/GitHub-Hyper-Agent-BROski",
+      "source_url": "https://github.com/welshDog/GitHub-Hyper-Agent-BROski",
+      "image": "https://placehold.co/600x400/0a0a1a/FF00FF?text=BROski+Agent",
+      "author": "welshDog"
     }
   ]
 }
