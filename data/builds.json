@@ -1,79 +1,46 @@
 {
   "featured": {
-    "id": "hypercode-v2",
-    "title": "HyperCode V2.0",
-    "subtitle": "The Next Evolution of Hyperfocus",
-    "video_url": "https://www.youtube.com/embed/I__0NU7OUZA", 
-    "description": "The central hub for the Hyperfocus ecosystem. Combining AI agents, quantum logic, and spatial computing to create the ultimate neurodivergent development environment.",
-    "primary_cta": { "label": "View on GitHub", "url": "https://github.com/welshDog/HyperCode-V2.0" },
-    "secondary_cta": { "label": "Watch Trailer", "url": "https://youtube.com/watch?v=I__0NU7OUZA" }
+    "id": "hyper-station",
+    "title": "HYPER STATION 1.0",
+    "subtitle": "The Ultimate Flow State Dashboard",
+    "video_url": "https://www.youtube.com/embed/dQw4w9WgXcQ", 
+    "description": "A spatial computing interface for managing multiple AI agents, tasks, and music in one immersive view. Built with React Three Fiber and Supabase.",
+    "primary_cta": { "label": "Launch Station", "url": "https://station.hypercode.dev" },
+    "secondary_cta": { "label": "Watch Trailer", "url": "https://youtube.com" }
   },
   "builds": [
     {
-      "id": "ultimate-adhd-arcade",
-      "title": "ULTIMATE ADHD BRAIN ARCADE",
-      "description": "A dopamine-driven arcade designed to hack ADHD brains into flow state.",
+      "id": "bee-colony",
+      "title": "Bee Colony Simulator 🐝",
+      "description": "A complex emergence simulation where individual bees follow simple rules to create complex hive behavior.",
       "status": "LIVE",
-      "tags": ["JS", "ADHD", "Brain Training"],
-      "demo_url": "https://github.com/welshDog/-ULTIMATE-ADHD-BRAIN-ARCADE-",
-      "source_url": "https://github.com/welshDog/-ULTIMATE-ADHD-BRAIN-ARCADE-",
-      "image": "https://placehold.co/600x400/101010/FFF?text=ADHD+Arcade",
+      "tags": ["Simulation", "AI", "Canvas"],
+      "demo_url": "https://bees.hypercode.dev",
+      "source_url": "https://github.com/welshDog/bee-colony",
+      "image": "https://placehold.co/600x400/101010/FFF?text=Bee+Colony",
       "author": "welshDog"
     },
     {
-      "id": "hyperfocus-3d-constellation",
-      "title": "Hyperfocus 3D Constellation",
-      "description": "Visualizing thought patterns and code structures in 3D space.",
-      "status": "WIP",
-      "tags": ["JS", "3D", "Visualization"],
-      "demo_url": "https://github.com/welshDog/-Hyperfocus-3D-Constellation",
-      "source_url": "https://github.com/welshDog/-Hyperfocus-3D-Constellation",
-      "image": "https://placehold.co/600x400/050505/FFF?text=3D+Constellation",
-      "author": "welshDog"
-    },
-    {
-      "id": "hyperfocus-ide-broski-v1",
-      "title": "HyperFocus IDE BROski v1",
-      "description": "An AI-powered IDE built specifically for neurodivergent workflows.",
+      "id": "hyperfocus-timer",
+      "title": "HyperFocus Timer ⏲️",
+      "description": "Minimalist pomodoro timer with ambient lo-fi textures and spatial audio mixing.",
       "status": "BETA",
-      "tags": ["Python", "AI", "IDE"],
-      "demo_url": "https://github.com/welshDog/HyperFocus-IDE-BROski-v1",
-      "source_url": "https://github.com/welshDog/HyperFocus-IDE-BROski-v1",
-      "image": "https://placehold.co/600x400/200020/FFF?text=IDE+BROski",
-      "author": "welshDog"
+      "tags": ["React", "Audio", "Productivity"],
+      "demo_url": "https://timer.hypercode.dev",
+      "source_url": "https://github.com/lyndz/hyperfocus-timer",
+      "image": "https://placehold.co/600x400/050505/FFF?text=Timer",
+      "author": "Lyndz"
     },
     {
-      "id": "my-github-caretaker",
-      "title": "My GitHub CareTaker",
-      "description": "Automated agent that maintains and organizes your GitHub repositories.",
-      "status": "LIVE",
-      "tags": ["Python", "AI", "Automation"],
-      "demo_url": "https://github.com/welshDog/My-GitHub-CareTaker",
-      "source_url": "https://github.com/welshDog/My-GitHub-CareTaker",
-      "image": "https://placehold.co/600x400/003300/FFF?text=GitHub+CareTaker",
-      "author": "welshDog"
-    },
-    {
-      "id": "the-hypercode",
-      "title": "THE HYPERCODE",
-      "description": "Experimental quantum language for high-dimensional problem solving.",
+      "id": "neon-snake",
+      "title": "Neon Snake 2077 🐍",
+      "description": "Cyberpunk-aesthetic snake game with particle effects and synthwave soundtrack.",
       "status": "WIP",
-      "tags": ["Python", "Quantum", "Language"],
-      "demo_url": "https://github.com/welshDog/THE-HYPERCODE",
-      "source_url": "https://github.com/welshDog/THE-HYPERCODE",
-      "image": "https://placehold.co/600x400/000033/FFF?text=THE+HYPERCODE",
-      "author": "welshDog"
-    },
-    {
-      "id": "github-hyper-agent-broski",
-      "title": "GitHub Hyper Agent BROski",
-      "description": "An autonomous agent that lives in your GitHub and handles tasks.",
-      "status": "LIVE",
-      "tags": ["AI", "Agents", "GitHub"],
-      "demo_url": "https://github.com/welshDog/GitHub-Hyper-Agent-BROski",
-      "source_url": "https://github.com/welshDog/GitHub-Hyper-Agent-BROski",
-      "image": "https://placehold.co/600x400/330000/FFF?text=Hyper+Agent",
-      "author": "welshDog"
+      "tags": ["Game", "Canvas", "Retro"],
+      "demo_url": "https://snake.hypercode.dev",
+      "source_url": "https://github.com/pixelninja/neon-snake",
+      "image": "https://placehold.co/600x400/200020/FFF?text=Neon+Snake",
+      "author": "PixelNinja"
     }
   ]
 }
