@@ -161,11 +161,11 @@ export default function Home() {
           </div>
           <div className="flex flex-wrap gap-3 items-center justify-center">
             <SocialLink label="GitHub" href="https://github.com/welshDog" />
-            <SocialLink label="Discord" href="https://discord.gg/YOUR_INVITE" />
+            <SocialLink label="Discord" href="https://discord.gg/A3aaRX8EM4" />
             <SocialLink label="TikTok" href="https://www.tiktok.com/@xdwelshdog" />
             <SocialLink label="X / Twitter" href="https://twitter.com/DeFiIsTheFuture" />
             <SocialLink label="Substack" href="https://hyperfocuslyndz.substack.com" />
-            <SocialLink label="Website" href="https://hyperfocus.zone" />
+            <SocialLink label="Website" href="https://ipfs.io/ipfs/bafybeid4uhna7v7izg5623g5gnxdwznmc3hgusm7vgged3yf6rkf2ct53y/" />
           </div>
         </div>
 
