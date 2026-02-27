@@ -73,6 +73,7 @@ export default function Home() {
               <a
                 href={featured.primary_cta.url}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="px-5 py-2.5 rounded-full bg-emerald-400 text-black font-bold hover:bg-emerald-300 transition shadow-lg shadow-emerald-400/10"
               >
                 {featured.primary_cta.label}
@@ -80,6 +81,7 @@ export default function Home() {
               <a
                 href={featured.secondary_cta.url}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="px-5 py-2.5 rounded-full border border-white/20 text-sm hover:border-emerald-300 hover:text-emerald-200 transition bg-white/5"
               >
                 {featured.secondary_cta.label}
@@ -268,6 +270,7 @@ function SocialLink({ label, href }: { label: string; href: string }) {
     <a
       href={href}
       target="_blank"
+      rel="noopener noreferrer"
       className="text-xs px-3 py-1.5 rounded-full border border-white/10 hover:border-emerald-300 hover:text-emerald-200 transition bg-white/5 hover:bg-emerald-400/10"
     >
       {label}
