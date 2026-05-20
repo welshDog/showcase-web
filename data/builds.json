@@ -3,7 +3,7 @@
     "id": "hyper-station",
     "title": "HYPER STATION 1.0",
     "subtitle": "The Ultimate Flow State Dashboard",
-    "video_url": "https://youtu.be/X7HukU1Th0c", 
+    "video_url": "https://www.youtube.com/embed/X7HukU1Th0c", 
     "description": "A spatial computing interface for managing multiple AI agents, tasks, and music in one immersive view. Built with React Three Fiber and Supabase.",
     "primary_cta": { "label": "Launch Station", "url": "https://station.hypercode.dev" },
     "secondary_cta": { "label": "Watch Trailer", "url": "https://youtube.com" }
