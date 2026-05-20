@@ -1,53 +1,137 @@
 import buildsData from '../data/builds.json';
 import { BuildsData, Build } from '../types/build';
+import { BuildCard } from '../components/BuildCard';
+
+const ECOSYSTEM = [
+  { name: 'HyperCode V2.4',              desc: 'Neuro-friendly lang + 29-container IDE brain.',      status: 'LIVE',  github: 'https://github.com/welshDog/HyperCode-V2.4',                          live: 'https://showcase-web-omega.vercel.app' },
+  { name: 'Hyper-Vibe-Coding-Course',    desc: 'Game-style AI course for neurodivergent devs.',      status: 'BETA',  github: 'https://github.com/welshDog/Hyper-Vibe-Coding-Course',               live: 'https://hyper-vibe-coding-course.vercel.app' },
+  { name: 'BROski-Obsidian-Brain',       desc: 'AI-agent knowledge brain + workflow tools.',         status: 'LIVE',  github: 'https://github.com/welshDog/BROski-Obsidian-Brain-for-HyperFocus-z0ne', live: '#' },
+  { name: 'BROskiPets-LLM-dNFT',        desc: 'NFT pets + AI agents + dynamic NFTs.',               status: 'WIP',   github: 'https://github.com/welshDog/BROskiPets-LLM-dNFT',                    live: '#' },
+  { name: 'HyperAgent-SDK',             desc: 'npm agent toolkit for Hyperfocus builds.',           status: 'BETA',  github: 'https://github.com/welshDog/HyperAgent-SDK',                         live: 'https://www.npmjs.com/package/@w3lshdog/hyper-agent' },
+];
+
+const STATUS_STRIP = [
+  { label: 'Course',        state: '🟢 online'  },
+  { label: 'HyperCode',     state: '🟢 running'  },
+  { label: 'Agents',        state: '🟡 testing'  },
+  { label: 'BROskiPets',    state: '🟢 minting'  },
+  { label: 'Obsidian-Brain',state: '🟢 active'   },
+];
 
 export default function Home() {
   const { featured, builds } = buildsData as BuildsData;
 
   return (
-    <main className="min-h-screen bg-linear-to-br from-[#050510] via-[#0c1020] to-[#15162b] text-white selection:bg-emerald-400/30">
-      {/* HERO */}
-      <section className="px-6 py-12 md:py-20 max-w-6xl mx-auto">
-        <div className="flex flex-col gap-6 md:gap-8">
-          <p className="text-sm uppercase tracking-[0.3em] text-emerald-300/70 font-mono">
-            HYPERFOCUS ZONE
-          </p>
-          <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-linear-to-r from-white via-emerald-100 to-emerald-300/50">
-            HYPERFOCUS Zone Builds &amp; Demos
-          </h1>
-          <p className="text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
-            A playground of agents, tools, games, and experiments built by Lyndz
-            (aka <span className="font-mono text-emerald-300">@welshDog</span>) for neurodivergent devs, tinkerers, and creators.
-          </p>
-          <div className="grid gap-3 md:grid-cols-3 max-w-3xl">
-            <HeroBullet text="🌱 Start from real builds, not tutorial toys." />
-            <HeroBullet text="🤝 Fork, remix, and ship your own flows." />
-            <HeroBullet text="🚀 Turn hyperfocus bursts into legendary projects." />
-          </div>
-          <div className="flex flex-wrap gap-4 mt-6">
-            <a
-              href="#builds"
-              className="px-6 py-3 rounded-full bg-emerald-400 text-black font-bold hover:bg-emerald-300 transition shadow-lg shadow-emerald-400/20"
+    <main
+      className="min-h-screen text-white"
+      style={{ background: 'linear-gradient(135deg, #07070A 0%, #0B1020 50%, #10152a 100%)' }}
+    >
+
+      {/* ── HERO ───────────────────────────────── */}
+      <section className="px-6 py-14 md:py-24 max-w-6xl mx-auto">
+        <p
+          className="text-xs uppercase tracking-[0.35em] mb-4 font-mono"
+          style={{ color: '#00FFE1' }}
+        >
+          HYPERFOCUS Z0NE ♾️ — Built by @welshDog
+        </p>
+
+        <h1
+          className="text-4xl md:text-6xl font-bold mb-5 leading-tight"
+          style={{
+            background: 'linear-gradient(90deg, #fff 30%, #00FFE1 70%, #FF2D95 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}
+        >
+          Build your AI Brain 🧠
+        </h1>
+
+        <p className="text-lg md:text-xl max-w-2xl leading-relaxed mb-6" style={{ color: '#B8C1CC' }}>
+          Tools, agents, games &amp; experiments for{' '}
+          <span style={{ color: '#00FFE1', fontWeight: 700 }}>ADHD &amp; dyslexic devs</span>.
+          Real builds, not tutorial toys.
+        </p>
+
+        {/* Hero bullets */}
+        <div className="grid gap-3 md:grid-cols-3 max-w-3xl mb-8">
+          {[
+            '🌱 Start from real builds, not tutorial toys.',
+            '🤝 Fork, remix, and ship your own flows.',
+            '🚀 Turn hyperfocus bursts into legendary projects.',
+          ].map(t => (
+            <div
+              key={t}
+              className="rounded-xl px-4 py-3 text-sm hz-card"
+              style={{ color: '#B8C1CC' }}
             >
-              Explore Community Builds
-            </a>
-            <a
-              href="#submit"
-              className="px-6 py-3 rounded-full border border-white/20 hover:border-emerald-300 hover:text-emerald-200 transition backdrop-blur-sm bg-white/5"
-            >
-              Submit Your Build (soon)
-            </a>
-          </div>
+              {t}
+            </div>
+          ))}
+        </div>
+
+        {/* CTAs */}
+        <div className="flex flex-wrap gap-4 mb-8">
+          <a href="#builds" className="btn-primary">Explore Builds 🔥</a>
+          <a href="#ecosystem" className="btn-secondary">View Ecosystem 🌐</a>
+          <a
+            href="https://discord.gg/A3aaRX8EM4"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary"
+            style={{ borderColor: 'rgba(255,45,149,0.4)', color: '#FF2D95' }}
+          >
+            Join Discord z0ne 💬
+          </a>
+        </div>
+
+        {/* Status strip */}
+        <div className="status-strip">
+          {STATUS_STRIP.map(s => (
+            <span key={s.label} className="status-dot">
+              <span style={{ color: '#00FFE1' }}>{s.label}</span>: {s.state}
+            </span>
+          ))}
         </div>
       </section>
 
-      {/* FEATURED HYPER STATION VIDEO */}
-      <section
-        id="hyper-station"
-        className="px-6 pb-12 md:pb-20 max-w-6xl mx-auto"
-      >
+      {/* ── ECOSYSTEM GRID ─────────────────────── */}
+      <section id="ecosystem" className="px-6 pb-16 max-w-6xl mx-auto">
+        <h2 className="text-2xl md:text-3xl font-bold mb-2">
+          The <span style={{ color: '#00FFE1' }}>Hyperfocus Z0ne</span> Ecosystem
+        </h2>
+        <p className="text-sm mb-8" style={{ color: '#B8C1CC' }}>
+          5 active repos. One brain. Stop apologising. Build your empire.
+        </p>
+
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {ECOSYSTEM.map(proj => (
+            <div key={proj.name} className="hz-card p-5 flex flex-col gap-3">
+              <div className="flex justify-between items-start">
+                <h3 className="font-bold text-white text-base leading-snug" style={{ fontFamily: 'Inter, sans-serif' }}>
+                  {proj.name}
+                </h3>
+                <EcoStatusBadge status={proj.status} />
+              </div>
+              <p className="text-sm" style={{ color: '#B8C1CC' }}>{proj.desc}</p>
+              <div className="flex gap-2 mt-auto pt-3" style={{ borderTop: '1px solid rgba(0,255,225,0.08)' }}>
+                <a href={proj.github} target="_blank" rel="noopener noreferrer" className="btn-secondary text-xs px-3 py-1.5">GitHub 📦</a>
+                {proj.live !== '#' && (
+                  <a href={proj.live} target="_blank" rel="noopener noreferrer" className="btn-primary text-xs px-3 py-1.5">Live 🚀</a>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── FEATURED VIDEO ─────────────────────── */}
+      <section id="hyper-station" className="px-6 pb-16 max-w-6xl mx-auto">
         <div className="grid md:grid-cols-[3fr,2fr] gap-8 items-start">
-          <div className="aspect-video w-full overflow-hidden rounded-2xl border border-white/10 shadow-2xl bg-black/60 relative group">
+          <div
+            className="aspect-video w-full overflow-hidden rounded-2xl shadow-2xl relative"
+            style={{ border: '1px solid rgba(0,255,225,0.15)', background: '#07070A' }}
+          >
             <iframe
               className="w-full h-full"
               src={`${featured.video_url}?modestbranding=1&rel=0&showinfo=0&controls=1`}
@@ -56,55 +140,41 @@ export default function Home() {
               allowFullScreen
             />
           </div>
-          <div className="flex flex-col gap-6">
-            <div>
-              <p className="text-xs uppercase tracking-[0.25em] text-emerald-300/70 mb-2 font-mono">
-                FEATURED DEMO
-              </p>
-              <h2 className="text-3xl md:text-4xl font-bold mb-2">
-                {featured.title}
-              </h2>
-              <p className="text-emerald-200/80 text-lg font-medium">{featured.subtitle}</p>
-            </div>
-            
-            <p className="text-white/70 leading-relaxed">{featured.description}</p>
-            
-            <div className="flex flex-wrap gap-3 mt-2">
-              <a
-                href={featured.primary_cta.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-5 py-2.5 rounded-full bg-emerald-400 text-black font-bold hover:bg-emerald-300 transition shadow-lg shadow-emerald-400/10"
-              >
+          <div className="flex flex-col gap-5">
+            <p className="text-xs uppercase tracking-[0.25em] font-mono" style={{ color: '#00FFE1' }}>
+              FEATURED DEMO
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold">{featured.title}</h2>
+            <p style={{ color: '#00FFE1' }} className="text-lg font-medium">{featured.subtitle}</p>
+            <p style={{ color: '#B8C1CC' }} className="leading-relaxed">{featured.description}</p>
+            <div className="flex flex-wrap gap-3">
+              <a href={featured.primary_cta.url} target="_blank" rel="noopener noreferrer" className="btn-primary">
                 {featured.primary_cta.label}
               </a>
-              <a
-                href={featured.secondary_cta.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-5 py-2.5 rounded-full border border-white/20 text-sm hover:border-emerald-300 hover:text-emerald-200 transition bg-white/5"
-              >
+              <a href={featured.secondary_cta.url} target="_blank" rel="noopener noreferrer" className="btn-secondary">
                 {featured.secondary_cta.label}
               </a>
             </div>
-
-            {/* Easter egg #1: hover hint */}
-            <p className="mt-4 text-xs text-white/30 italic">
-              Pssst… try hovering over the 🐝 builds below. One of them reveals a secret BROski♾️ message.
+            <p className="text-xs italic" style={{ color: 'rgba(255,255,255,0.25)' }}>
+              Pssst… try hovering over the 🐝 builds below.
             </p>
           </div>
         </div>
       </section>
 
-      {/* BUILDS GRID */}
+      {/* ── BUILDS GALLERY ─────────────────────── */}
       <section id="builds" className="px-6 pb-16 max-w-6xl mx-auto">
-        <div className="flex items-baseline justify-between mb-8 border-b border-white/10 pb-4">
-          <h2 className="text-2xl md:text-3xl font-semibold">Builds Gallery</h2>
-          <p className="text-sm text-white/60 font-mono">
-            Showing {builds.length} builds
+        <div
+          className="flex items-baseline justify-between mb-8 pb-4"
+          style={{ borderBottom: '1px solid rgba(0,255,225,0.1)' }}
+        >
+          <h2 className="text-2xl md:text-3xl font-bold">
+            Builds <span style={{ color: '#00FFE1' }}>Gallery</span>
+          </h2>
+          <p className="text-sm font-mono" style={{ color: '#B8C1CC' }}>
+            {builds.length} builds 🔥
           </p>
         </div>
-
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {builds.map((build) => (
             <BuildCard key={build.id} build={build} />
@@ -112,168 +182,110 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SUBMIT SECTION (FUTURE) */}
-      <section
-        id="submit"
-        className="px-6 pb-16 max-w-4xl mx-auto pt-10"
-      >
-        <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-          
-          <h2 className="text-2xl md:text-3xl font-semibold mb-6">
-            Submit Your Build (soon)
+      {/* ── SUBMIT ─────────────────────────────── */}
+      <section id="submit" className="px-6 pb-16 max-w-4xl mx-auto">
+        <div
+          className="rounded-3xl p-8 md:p-12 relative overflow-hidden"
+          style={{
+            background: 'rgba(11,16,32,0.85)',
+            border:     '1px solid rgba(0,255,225,0.12)',
+            backdropFilter: 'blur(12px)',
+          }}
+        >
+          <div
+            className="absolute top-0 right-0 w-64 h-64 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"
+            style={{ background: 'rgba(0,255,225,0.07)' }}
+          />
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">
+            Submit Your Build <span style={{ color: '#00FFE1' }}>(soon)</span>
           </h2>
-          <p className="text-white/75 mb-6">
-            Soon you&apos;ll be able to add your own agents, tools, games, and
-            experiments to the Hyperfocus gallery. The plan:
+          <p className="mb-6" style={{ color: '#B8C1CC' }}>
+            Add your own agents, tools, games, and experiments to the Hyperfocus gallery.
           </p>
-          <ol className="space-y-4 text-white/80 text-sm mb-8">
-            <li className="flex items-center gap-3">
-              <span className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-xs font-bold">1</span>
-              <span>Fork the showcase repo from GitHub.</span>
-            </li>
-            <li className="flex items-center gap-3">
-              <span className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-xs font-bold">2</span>
-              <span>Add your build to <code className="bg-black/30 px-1.5 py-0.5 rounded text-emerald-200 font-mono">data/builds.json</code>.</span>
-            </li>
-            <li className="flex items-center gap-3">
-              <span className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-xs font-bold">3</span>
-              <span>Open a Pull Request. Once merged, you&apos;re live.</span>
-            </li>
+          <ol className="space-y-4 text-sm mb-8">
+            {[
+              'Fork the showcase repo from GitHub.',
+              <span key="2">Add your build to <code style={{ background: 'rgba(0,0,0,0.4)', padding: '0 6px', borderRadius: 4, color: '#00FFE1' }}>data/builds.json</code>.</span>,
+              'Open a Pull Request. Once merged, you\'re live.',
+            ].map((step, i) => (
+              <li key={i} className="flex items-center gap-3">
+                <span
+                  className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0"
+                  style={{ background: 'rgba(0,255,225,0.12)', color: '#00FFE1' }}
+                >{i + 1}</span>
+                <span style={{ color: '#B8C1CC' }}>{step}</span>
+              </li>
+            ))}
           </ol>
-
-          {/* Easter egg #2: Konami code hint */}
-          <p className="text-xs text-white/30 italic">
-            Legend says that if you enter the Konami code on this page, a secret
-            Hyperfocus theme unlocks… (coming in a future version).
+          <p className="text-xs italic" style={{ color: 'rgba(255,255,255,0.25)' }}>
+            Legend says entering the Konami code unlocks a secret Hyperfocus theme… (coming soon).
           </p>
         </div>
       </section>
 
-      {/* FOOTER / SOCIALS */}
-      <footer className="border-t border-white/10 py-12 px-6 bg-black/20">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-sm text-white/70">
+      {/* ── FOOTER ─────────────────────────────── */}
+      <footer
+        className="py-12 px-6"
+        style={{ borderTop: '1px solid rgba(0,255,225,0.1)', background: 'rgba(7,7,10,0.6)' }}
+      >
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-sm">
           <div className="text-center md:text-left">
-            <p className="mb-1">
-              Built with <span className="text-emerald-300 font-bold">HyperCode Flow</span> ♾️
+            <p className="mb-1 font-bold" style={{ color: '#00FFE1' }}>
+              HYPERFOCUS Z0NE ♾️
             </p>
-            <p className="text-xs text-white/50">
+            <p className="text-xs" style={{ color: '#B8C1CC' }}>
+              Built by Lyndz Williams (@welshDog) — Llanelli, Wales 🏴󠁧󠁢󠁷󠁬󠁳󠁧
+            </p>
+            <p className="text-xs mt-1" style={{ color: 'rgba(255,255,255,0.35)' }}>
               Made by neurospicy devs for neurospicy devs. Stay weird. Build legendary.
             </p>
           </div>
           <div className="flex flex-wrap gap-3 items-center justify-center">
-            <SocialLink label="GitHub" href="https://github.com/welshDog" />
-            <SocialLink label="Discord" href="https://discord.gg/A3aaRX8EM4" />
-            <SocialLink label="TikTok" href="https://www.tiktok.com/@xdwelshdog" />
-            <SocialLink label="X / Twitter" href="https://twitter.com/DeFiIsTheFuture" />
-            <SocialLink label="Substack" href="https://hyperfocuslyndz.substack.com" />
-            <SocialLink label="Website" href="https://ipfs.io/ipfs/bafybeid4uhna7v7izg5623g5gnxdwznmc3hgusm7vgged3yf6rkf2ct53y/" />
+            {[
+              { label: 'GitHub',    href: 'https://github.com/welshDog' },
+              { label: 'Discord',   href: 'https://discord.gg/A3aaRX8EM4' },
+              { label: 'TikTok',   href: 'https://www.tiktok.com/@xdwelshdog' },
+              { label: 'X',        href: 'https://twitter.com/DeFiIsTheFuture' },
+              { label: 'Substack', href: 'https://hyperfocuslyndz.substack.com' },
+            ].map(s => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs px-3 py-1.5 rounded-full transition-colors duration-200"
+                style={{
+                  border:     '1px solid rgba(0,255,225,0.15)',
+                  color:      '#B8C1CC',
+                  background: 'rgba(0,255,225,0.04)',
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.color = '#00FFE1';
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(0,255,225,0.5)';
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLAnchorElement).style.color = '#B8C1CC';
+                  (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(0,255,225,0.15)';
+                }}
+              >
+                {s.label}
+              </a>
+            ))}
           </div>
         </div>
-
-        {/* Easter egg #3: tiny copyright */}
-        <p className="mt-8 text-center text-[10px] text-white/20 font-mono">
-          If you&apos;re reading this tiny line, you&apos;re officially a Hyperfocus
-          lore enjoyer. Welcome to the crew, BROski♾️.
+        <p className="mt-8 text-center font-mono" style={{ fontSize: '10px', color: 'rgba(255,255,255,0.18)' }}>
+          If you&apos;re reading this tiny line, you&apos;re officially a Hyperfocus lore enjoyer. Welcome to the crew, BROski♾️.
         </p>
       </footer>
     </main>
   );
 }
 
-function HeroBullet({ text }: { text: string }) {
-  return (
-    <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm flex items-center gap-2 hover:bg-white/10 transition cursor-default">
-      {text}
-    </div>
-  );
-}
-
-function BuildCard({ build }: { build: Build }) {
-  const isBee = build.id === 'bee-colony';
-  return (
-    <article
-      className={`group rounded-2xl border border-white/10 bg-white/5 overflow-hidden shadow-lg flex flex-col ${
-        isBee ? 'hover:border-amber-300/80' : 'hover:border-emerald-300/80'
-      } transition hover:-translate-y-1 duration-300`}
-      title={isBee ? '🐝 You found a hidden bee. Hyperfocus swarms unlocked.' : undefined}
-    >
-      <div className="h-48 w-full bg-black/40 overflow-hidden relative">
-        <img
-          src={build.image}
-          alt={build.title}
-          className="w-full h-full object-cover transition duration-500 group-hover:scale-110"
-        />
-        <div className="absolute top-3 right-3">
-          <StatusBadge status={build.status} />
-        </div>
-      </div>
-      <div className="p-5 flex flex-col gap-3 flex-1">
-        <div className="flex items-start justify-between gap-3">
-          <h3 className="font-bold text-xl group-hover:text-emerald-300 transition leading-tight">{build.title}</h3>
-          <StatusBadge status={build.status} />
-        </div>
-        
-        <p className="text-xs text-white/50 font-mono -mt-1">by @{build.author}</p>
-        
-        <p className="text-sm text-white/80 line-clamp-3 leading-relaxed">{build.description}</p>
-        
-        <div className="flex flex-wrap gap-2 mt-auto pt-4">
-          {build.tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-2.5 py-1 rounded-full bg-white/5 text-[10px] font-bold uppercase tracking-wider text-white/60 border border-white/5 group-hover:border-white/20 transition"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-        <div className="mt-4 flex gap-3">
-          <a
-            href={build.demo_url}
-            target="_blank"
-            className="flex-1 px-3 py-2 rounded-lg bg-emerald-400 text-black text-sm font-bold text-center hover:bg-emerald-300 transition shadow-lg shadow-emerald-400/10"
-          >
-            Play Demo
-          </a>
-          <a
-            href={build.source_url}
-            target="_blank"
-            className="flex-1 px-3 py-2 rounded-lg border border-white/20 text-sm text-center font-medium hover:border-emerald-300 hover:text-emerald-200 transition bg-white/5"
-          >
-            View Code
-          </a>
-        </div>
-      </div>
-    </article>
-  );
-}
-
-function StatusBadge({ status }: { status: string }) {
-  const colors: Record<string, string> = {
-    LIVE: 'bg-emerald-400 text-black shadow-lg shadow-emerald-400/20',
-    BETA: 'bg-amber-300 text-black shadow-lg shadow-amber-300/20',
-    WIP: 'bg-pink-500 text-white shadow-lg shadow-pink-500/20'
+function EcoStatusBadge({ status }: { status: string }) {
+  const map: Record<string, string> = {
+    LIVE: 'badge badge-live',
+    BETA: 'badge badge-beta',
+    WIP:  'badge badge-wip',
   };
-  const label = status.toUpperCase();
-  return (
-    <span
-      className={`px-2 py-0.5 rounded-md text-[10px] font-bold tracking-wider ${colors[status] ?? 'bg-slate-500 text-white'}`}
-    >
-      {label}
-    </span>
-  );
-}
-
-function SocialLink({ label, href }: { label: string; href: string }) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-xs px-3 py-1.5 rounded-full border border-white/10 hover:border-emerald-300 hover:text-emerald-200 transition bg-white/5 hover:bg-emerald-400/10"
-    >
-      {label}
-    </a>
-  );
+  return <span className={map[status] ?? 'badge badge-live'}>{status}</span>;
 }

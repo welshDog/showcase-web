@@ -1,17 +1,178 @@
 @import "tailwindcss";
 
+/* ============================================
+   HYPERFOCUS Z0NE — OFFICIAL COLOR SYSTEM
+   Built by @welshDog ♾️
+============================================ */
+
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
+  /* Core Palette */
+  --hz-cyan:       #00FFE1;
+  --hz-navy:       #0B1020;
+  --hz-magenta:    #FF2D95;
+  --hz-yellow:     #FFD166;
+  --hz-slate:      #B8C1CC;
+  --hz-black:      #07070A;
+
+  /* Glow tokens */
+  --glow-cyan:     0 0 18px rgba(0, 255, 225, 0.22);
+  --glow-magenta:  0 0 18px rgba(255, 45, 149, 0.22);
+  --glow-yellow:   0 0 12px rgba(255, 209, 102, 0.18);
+
+  /* UI tokens */
+  --radius-card:   10px;
+  --border-neon:   1px solid rgba(0, 255, 225, 0.18);
 }
 
+/* Base */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: var(--hz-navy);
+  color: #fff;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
+
+/* =====================
+   TYPOGRAPHY
+===================== */
+.font-mono,
+code,
+pre {
+  font-family: 'JetBrains Mono', 'Fira Mono', monospace;
+}
+
+/* =====================
+   NEON UTILITY CLASSES
+===================== */
+.neon-cyan   { color: var(--hz-cyan); }
+.neon-magenta { color: var(--hz-magenta); }
+.neon-yellow  { color: var(--hz-yellow); }
+
+.bg-hz-navy    { background-color: var(--hz-navy); }
+.bg-hz-black   { background-color: var(--hz-black); }
+
+.border-neon { border: var(--border-neon); }
+
+/* =====================
+   CARD BASE
+===================== */
+.hz-card {
+  background:    rgba(11, 16, 32, 0.85);
+  border:        1px solid rgba(0, 255, 225, 0.12);
+  border-radius: var(--radius-card);
+  backdrop-filter: blur(12px);
+  transition:    border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+.hz-card:hover {
+  border-color: rgba(0, 255, 225, 0.45);
+  box-shadow:   var(--glow-cyan);
+  transform:    translateY(-3px);
+}
+
+/* =====================
+   BUTTONS
+===================== */
+.btn-primary {
+  background:    var(--hz-cyan);
+  color:         var(--hz-black);
+  font-weight:   700;
+  border-radius: 10px;
+  padding:       0.6rem 1.2rem;
+  border:        none;
+  cursor:        pointer;
+  transition:    background 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  display:       inline-block;
+}
+.btn-primary:hover {
+  background:  #33ffe8;
+  box-shadow:  var(--glow-cyan);
+}
+
+.btn-secondary {
+  background:    transparent;
+  color:         var(--hz-cyan);
+  font-weight:   600;
+  border-radius: 10px;
+  padding:       0.6rem 1.2rem;
+  border:        1px solid rgba(0, 255, 225, 0.35);
+  cursor:        pointer;
+  transition:    border-color 0.2s ease, color 0.2s ease;
+  text-decoration: none;
+  display:       inline-block;
+}
+.btn-secondary:hover {
+  border-color: var(--hz-cyan);
+  box-shadow:   var(--glow-cyan);
+}
+
+/* =====================
+   BADGES
+===================== */
+.badge {
+  font-size:     0.6rem;
+  font-weight:   700;
+  letter-spacing: 0.08em;
+  padding:       0.2rem 0.55rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+  display:       inline-block;
+}
+.badge-live    { background: var(--hz-cyan);    color: var(--hz-black); }
+.badge-beta    { background: var(--hz-yellow);  color: var(--hz-black); }
+.badge-wip     { background: var(--hz-magenta); color: #fff; }
+.badge-xp      { background: var(--hz-magenta); color: #fff; box-shadow: var(--glow-magenta); }
+
+/* =====================
+   STATUS STRIP
+===================== */
+.status-strip {
+  display:        flex;
+  gap:            1rem;
+  flex-wrap:      wrap;
+  padding:        0.6rem 1.2rem;
+  background:     rgba(7, 7, 10, 0.7);
+  border:         1px solid rgba(0, 255, 225, 0.08);
+  border-radius:  8px;
+  backdrop-filter: blur(8px);
+}
+.status-dot {
+  font-size: 0.72rem;
+  color:     var(--hz-slate);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* =====================
+   SELECTION
+===================== */
+::selection {
+  background: rgba(0, 255, 225, 0.25);
+  color: #fff;
+}
+
+/* =====================
+   SCROLLBAR
+===================== */
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: var(--hz-black); }
+::-webkit-scrollbar-thumb { background: rgba(0,255,225,0.25); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--hz-cyan); }
+
+/* =====================
+   ANIMATIONS
+===================== */
+@keyframes pulse-neon {
+  0%, 100% { box-shadow: 0 0 8px rgba(0,255,225,0.15); }
+  50%       { box-shadow: 0 0 22px rgba(0,255,225,0.45); }
+}
+@keyframes xp-pop {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.18); }
+  100% { transform: scale(1); }
+}
+.animate-pulse-neon { animation: pulse-neon 2.5s ease-in-out infinite; }
+.animate-xp-pop     { animation: xp-pop 0.35s ease-in-out; }
