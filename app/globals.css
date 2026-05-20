@@ -1,178 +1,159 @@
 @import "tailwindcss";
 
-/* ============================================
-   HYPERFOCUS Z0NE — OFFICIAL COLOR SYSTEM
-   Built by @welshDog ♾️
-============================================ */
-
+/* ── Base ─────────────────────────────────── */
 :root {
-  /* Core Palette */
-  --hz-cyan:       #00FFE1;
-  --hz-navy:       #0B1020;
-  --hz-magenta:    #FF2D95;
-  --hz-yellow:     #FFD166;
-  --hz-slate:      #B8C1CC;
-  --hz-black:      #07070A;
-
-  /* Glow tokens */
-  --glow-cyan:     0 0 18px rgba(0, 255, 225, 0.22);
-  --glow-magenta:  0 0 18px rgba(255, 45, 149, 0.22);
-  --glow-yellow:   0 0 12px rgba(255, 209, 102, 0.18);
-
-  /* UI tokens */
-  --radius-card:   10px;
-  --border-neon:   1px solid rgba(0, 255, 225, 0.18);
+  --hz-cyan:  #00FFE1;
+  --hz-pink:  #FF2D95;
+  --hz-dark:  #07070A;
+  --hz-mid:   #0B1020;
+  --hz-text:  #B8C1CC;
 }
-
-/* Base */
-*, *::before, *::after { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
 
 body {
-  background-color: var(--hz-navy);
-  color: #fff;
   font-family: 'Inter', system-ui, sans-serif;
-  -webkit-font-smoothing: antialiased;
+  background: var(--hz-dark);
+  color: #fff;
 }
 
-/* =====================
-   TYPOGRAPHY
-===================== */
-.font-mono,
-code,
-pre {
-  font-family: 'JetBrains Mono', 'Fira Mono', monospace;
+/* ── Aurora background ────────────────────── */
+.aurora-1, .aurora-2, .aurora-3 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.18;
+  animation: auroraDrift 12s ease-in-out infinite alternate;
+}
+.aurora-1 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, #00FFE1, transparent);
+  top: -200px; left: -100px;
+  animation-duration: 14s;
+}
+.aurora-2 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, #FF2D95, transparent);
+  top: 30%; right: -150px;
+  animation-duration: 18s;
+  animation-direction: alternate-reverse;
+}
+.aurora-3 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, #7C3AED, transparent);
+  bottom: 10%; left: 20%;
+  animation-duration: 22s;
 }
 
-/* =====================
-   NEON UTILITY CLASSES
-===================== */
-.neon-cyan   { color: var(--hz-cyan); }
-.neon-magenta { color: var(--hz-magenta); }
-.neon-yellow  { color: var(--hz-yellow); }
-
-.bg-hz-navy    { background-color: var(--hz-navy); }
-.bg-hz-black   { background-color: var(--hz-black); }
-
-.border-neon { border: var(--border-neon); }
-
-/* =====================
-   CARD BASE
-===================== */
-.hz-card {
-  background:    rgba(11, 16, 32, 0.85);
-  border:        1px solid rgba(0, 255, 225, 0.12);
-  border-radius: var(--radius-card);
-  backdrop-filter: blur(12px);
-  transition:    border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-}
-.hz-card:hover {
-  border-color: rgba(0, 255, 225, 0.45);
-  box-shadow:   var(--glow-cyan);
-  transform:    translateY(-3px);
+@keyframes auroraDrift {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(40px, 60px) scale(1.15); }
 }
 
-/* =====================
-   BUTTONS
-===================== */
+/* ── Scanlines ────────────────────────────── */
+.scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.03) 2px,
+    rgba(0,0,0,0.03) 4px
+  );
+  pointer-events: none;
+}
+
+/* ── Animated gradient text ───────────────── */
+@keyframes gradientShift {
+  0%   { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ── Progress bar pulse ───────────────────── */
+@keyframes progressPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.75; }
+}
+
+/* ── Buttons ──────────────────────────────── */
 .btn-primary {
-  background:    var(--hz-cyan);
-  color:         var(--hz-black);
-  font-weight:   700;
-  border-radius: 10px;
-  padding:       0.6rem 1.2rem;
-  border:        none;
-  cursor:        pointer;
-  transition:    background 0.2s ease, box-shadow 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  background: linear-gradient(135deg, #00FFE1 0%, #0099CC 100%);
+  color: #07070A;
+  border: none;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
   text-decoration: none;
-  display:       inline-block;
 }
 .btn-primary:hover {
-  background:  #33ffe8;
-  box-shadow:  var(--glow-cyan);
+  box-shadow: 0 0 24px rgba(0,255,225,0.45);
+  transform: translateY(-1px);
 }
 
 .btn-secondary {
-  background:    transparent;
-  color:         var(--hz-cyan);
-  font-weight:   600;
-  border-radius: 10px;
-  padding:       0.6rem 1.2rem;
-  border:        1px solid rgba(0, 255, 225, 0.35);
-  cursor:        pointer;
-  transition:    border-color 0.2s ease, color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  background: rgba(0,255,225,0.07);
+  color: #00FFE1;
+  border: 1px solid rgba(0,255,225,0.25);
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s, background 0.2s;
   text-decoration: none;
-  display:       inline-block;
 }
 .btn-secondary:hover {
-  border-color: var(--hz-cyan);
-  box-shadow:   var(--glow-cyan);
+  background: rgba(0,255,225,0.14);
+  box-shadow: 0 0 18px rgba(0,255,225,0.2);
+  transform: translateY(-1px);
 }
 
-/* =====================
-   BADGES
-===================== */
+/* ── Cards ────────────────────────────────── */
+.hz-card {
+  background: rgba(11,16,32,0.75);
+  border: 1px solid rgba(0,255,225,0.1);
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.hz-card:hover {
+  border-color: rgba(0,255,225,0.25);
+  box-shadow: 0 0 24px rgba(0,255,225,0.06);
+}
+
+/* ── Badges ───────────────────────────────── */
 .badge {
-  font-size:     0.6rem;
-  font-weight:   700;
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.65rem;
+  font-weight: 700;
   letter-spacing: 0.08em;
-  padding:       0.2rem 0.55rem;
-  border-radius: 6px;
   text-transform: uppercase;
-  display:       inline-block;
+  font-family: monospace;
 }
-.badge-live    { background: var(--hz-cyan);    color: var(--hz-black); }
-.badge-beta    { background: var(--hz-yellow);  color: var(--hz-black); }
-.badge-wip     { background: var(--hz-magenta); color: #fff; }
-.badge-xp      { background: var(--hz-magenta); color: #fff; box-shadow: var(--glow-magenta); }
+.badge-live  { background: rgba(0,255,225,0.15); color: #00FFE1; border: 1px solid rgba(0,255,225,0.3); }
+.badge-beta  { background: rgba(245,158,11,0.15); color: #F59E0B; border: 1px solid rgba(245,158,11,0.3); }
+.badge-wip   { background: rgba(255,45,149,0.15);  color: #FF2D95; border: 1px solid rgba(255,45,149,0.3); }
 
-/* =====================
-   STATUS STRIP
-===================== */
+/* ── Status strip ─────────────────────────── */
 .status-strip {
-  display:        flex;
-  gap:            1rem;
-  flex-wrap:      wrap;
-  padding:        0.6rem 1.2rem;
-  background:     rgba(7, 7, 10, 0.7);
-  border:         1px solid rgba(0, 255, 225, 0.08);
-  border-radius:  8px;
-  backdrop-filter: blur(8px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: rgba(0,255,225,0.04);
+  border: 1px solid rgba(0,255,225,0.1);
+  border-radius: 0.75rem;
+  font-size: 0.75rem;
+  font-family: monospace;
 }
-.status-dot {
-  font-size: 0.72rem;
-  color:     var(--hz-slate);
-  font-family: 'JetBrains Mono', monospace;
-}
-
-/* =====================
-   SELECTION
-===================== */
-::selection {
-  background: rgba(0, 255, 225, 0.25);
-  color: #fff;
-}
-
-/* =====================
-   SCROLLBAR
-===================== */
-::-webkit-scrollbar       { width: 6px; }
-::-webkit-scrollbar-track { background: var(--hz-black); }
-::-webkit-scrollbar-thumb { background: rgba(0,255,225,0.25); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--hz-cyan); }
-
-/* =====================
-   ANIMATIONS
-===================== */
-@keyframes pulse-neon {
-  0%, 100% { box-shadow: 0 0 8px rgba(0,255,225,0.15); }
-  50%       { box-shadow: 0 0 22px rgba(0,255,225,0.45); }
-}
-@keyframes xp-pop {
-  0%   { transform: scale(1); }
-  50%  { transform: scale(1.18); }
-  100% { transform: scale(1); }
-}
-.animate-pulse-neon { animation: pulse-neon 2.5s ease-in-out infinite; }
-.animate-xp-pop     { animation: xp-pop 0.35s ease-in-out; }
+.status-dot { color: #B8C1CC; }
