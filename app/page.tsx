@@ -1,6 +1,7 @@
 import buildsData from '../data/builds.json';
 import { BuildsData, Build } from '../types/build';
 import { BuildCard } from '../components/BuildCard';
+import { SocialLinks } from '../components/SocialLinks';
 
 const ECOSYSTEM = [
   { name: 'HyperCode V2.4',              desc: 'Neuro-friendly lang + 29-container IDE brain.',      status: 'LIVE',  github: 'https://github.com/welshDog/HyperCode-V2.4',                          live: 'https://showcase-web-omega.vercel.app' },
@@ -240,38 +241,7 @@ export default function Home() {
               Made by neurospicy devs for neurospicy devs. Stay weird. Build legendary.
             </p>
           </div>
-          <div className="flex flex-wrap gap-3 items-center justify-center">
-            {[
-              { label: 'GitHub',    href: 'https://github.com/welshDog' },
-              { label: 'Discord',   href: 'https://discord.gg/A3aaRX8EM4' },
-              { label: 'TikTok',   href: 'https://www.tiktok.com/@xdwelshdog' },
-              { label: 'X',        href: 'https://twitter.com/DeFiIsTheFuture' },
-              { label: 'Substack', href: 'https://hyperfocuslyndz.substack.com' },
-            ].map(s => (
-              <a
-                key={s.label}
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs px-3 py-1.5 rounded-full transition-colors duration-200"
-                style={{
-                  border:     '1px solid rgba(0,255,225,0.15)',
-                  color:      '#B8C1CC',
-                  background: 'rgba(0,255,225,0.04)',
-                }}
-                onMouseEnter={e => {
-                  (e.currentTarget as HTMLAnchorElement).style.color = '#00FFE1';
-                  (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(0,255,225,0.5)';
-                }}
-                onMouseLeave={e => {
-                  (e.currentTarget as HTMLAnchorElement).style.color = '#B8C1CC';
-                  (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(0,255,225,0.15)';
-                }}
-              >
-                {s.label}
-              </a>
-            ))}
-          </div>
+          <SocialLinks />
         </div>
         <p className="mt-8 text-center font-mono" style={{ fontSize: '10px', color: 'rgba(255,255,255,0.18)' }}>
           If you&apos;re reading this tiny line, you&apos;re officially a Hyperfocus lore enjoyer. Welcome to the crew, BROski♾️.
