@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import Link from 'next/link';
 
 export function SupportCTA() {
   const [copied, setCopied] = useState(false);
@@ -87,9 +88,9 @@ export function SupportCTA() {
 
       {/* Bottom nav back */}
       <div className="text-center mt-12">
-        <a href="/" className="text-sm font-mono" style={{ color: 'rgba(255,255,255,0.3)' }}>
+        <Link href="/" className="text-sm font-mono" style={{ color: 'rgba(255,255,255,0.3)' }}>
           ← Back to Hyperfocus Z0ne
-        </a>
+        </Link>
       </div>
     </section>
   );

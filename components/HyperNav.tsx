@@ -13,13 +13,12 @@ const NAV_LINKS = [
 export function HyperNav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen]         = useState(false);
-  const [active, setActive]     = useState('/');
+  const [active, setActive]     = useState(() => (typeof window !== 'undefined' ? window.location.pathname : '/'));
   const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
     window.addEventListener('scroll', onScroll, { passive: true });
-    setActive(window.location.pathname);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 

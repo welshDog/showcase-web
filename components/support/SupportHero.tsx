@@ -23,8 +23,10 @@ export function SupportHero() {
     } else if (deleting && displayed.length > 0) {
       timeout.current = setTimeout(() => setDisplayed(displayed.slice(0, -1)), 22);
     } else if (deleting && displayed.length === 0) {
-      setDeleting(false);
-      setLineIdx((i) => (i + 1) % TYPED_LINES.length);
+      timeout.current = setTimeout(() => {
+        setDeleting(false);
+        setLineIdx((i) => (i + 1) % TYPED_LINES.length);
+      }, 0);
     }
     return () => { if (timeout.current) clearTimeout(timeout.current); };
   }, [displayed, deleting, lineIdx]);
