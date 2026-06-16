@@ -36,6 +36,11 @@ yarn-error.log*
 # vercel
 .vercel
 
+# HyperFocus Z0ne hooks
+logs/
+.focus_session_start
+.claude/settings.local.json
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
