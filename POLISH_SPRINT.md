@@ -3,6 +3,48 @@
 
 ---
 
+## 🧠 HYPER-SKILLs Guardrails — Read These First
+
+> These are mandatory behaviour constraints from the [HYPER-SKILLs vault](https://github.com/welshDog/HYPER-SILLs-By-WelshDog).
+> Read each file **before** writing a single line of code.
+> Apply them throughout the entire sprint — no exceptions.
+
+| Skill | File | Apply When |
+|---|---|---|
+| 💚 **MERCY MESSAGE** (HS-069) | [`broski/ND_FIRST_ERROR_MESSAGES_v1.md`](https://github.com/welshDog/HYPER-SILLs-By-WelshDog/blob/main/broski/ND_FIRST_ERROR_MESSAGES_v1.md) | Every empty state, error message, and toast |
+| 📐 **THE STYLE CODEX** (HS-084) | [`dev/CODE_STYLE_STANDARDS_v1.md`](https://github.com/welshDog/HYPER-SILLs-By-WelshDog/blob/main/dev/CODE_STYLE_STANDARDS_v1.md) | All TS/React components — no exceptions |
+| ✅ **THE GATEKEEPER** (HS-076) | [`dev/PRE_COMMIT_TESTING_CHECKLIST_v1.md`](https://github.com/welshDog/HYPER-SILLs-By-WelshDog/blob/main/dev/PRE_COMMIT_TESTING_CHECKLIST_v1.md) | Before every single commit |
+| ⚔️ **TRIM LORD** (HS-110) | [`dev/LEAN_RAID_DISCIPLINE_v1.md`](https://github.com/welshDog/HYPER-SILLs-By-WelshDog/blob/main/dev/LEAN_RAID_DISCIPLINE_v1.md) | Entire sprint — no scope creep |
+| 🐕 **GREP HOUND** (HS-109) | [`dev/CROSS_REFERENCE_BEFORE_WRITING_v1.md`](https://github.com/welshDog/HYPER-SILLs-By-WelshDog/blob/main/dev/CROSS_REFERENCE_BEFORE_WRITING_v1.md) | Before writing any new component or function |
+| 📊 **THE METRICS OATH** (HS-105) | [`dev/CORE_AGENT_METRICS_CONTRACT_v1.md`](https://github.com/welshDog/HYPER-SILLs-By-WelshDog/blob/main/dev/CORE_AGENT_METRICS_CONTRACT_v1.md) | Admin vitals cards and stat displays |
+| 🌱 **THE BIRTH RITE** (HS-106) | [`dev/NEW_AGENT_BUILD_CHECKLIST_v1.md`](https://github.com/welshDog/HYPER-SILLs-By-WelshDog/blob/main/dev/NEW_AGENT_BUILD_CHECKLIST_v1.md) | Task 6 — Agents Lab wiring |
+| 🔱 **REALITY ANCHOR** (HS-108) | [`dev/TRUTH_VS_CLAIM_AUDIT_v1.md`](https://github.com/welshDog/HYPER-SILLs-By-WelshDog/blob/main/dev/TRUTH_VS_CLAIM_AUDIT_v1.md) | After each task — verify you did what you said |
+| 🪞 **THE MIRROR OATH** (HS-088) | [`agents/AGENT_FINAL_SELF_AUDIT_v1.md`](https://github.com/welshDog/HYPER-SILLs-By-WelshDog/blob/main/agents/AGENT_FINAL_SELF_AUDIT_v1.md) | Before calling any task "done" |
+| 👁️ **THE ALL-SEEING** (HS-070) | [`agents/OBSERVABLE_AGENT_OPERATIONS_v1.md`](https://github.com/welshDog/HYPER-SILLs-By-WelshDog/blob/main/agents/OBSERVABLE_AGENT_OPERATIONS_v1.md) | Products Watcher visible action |
+| 🪂 **SOFT LANDING** (HS-071) | [`agents/FAIL_GRACEFULLY_FALLBACK_CHAIN_v1.md`](https://github.com/welshDog/HYPER-SILLs-By-WelshDog/blob/main/agents/FAIL_GRACEFULLY_FALLBACK_CHAIN_v1.md) | Any agent error handling |
+| 🚧 **THE FIVE WARDS** (HS-085) | [`agents/FIVE_MANDATORY_AGENT_GUARDRAILS_v1.md`](https://github.com/welshDog/HYPER-SILLs-By-WelshDog/blob/main/agents/FIVE_MANDATORY_AGENT_GUARDRAILS_v1.md) | All Agents Lab wiring |
+
+---
+
+## 🏷️ Product Price Mapping — Ask Lyndz For This
+
+**Before starting Task 1**, ask for the following for each product:
+
+```
+PRODUCT PRICE MAPPING
+=====================
+Product Name: [exact name as it appears in Supabase]
+Price (GBP): £X.XX
+Stock: [number]
+Category: [e.g. 3D Print / Mug / Bundle / Digital]
+Active: yes / no
+Short description (optional): ...
+```
+
+**Do NOT set any prices or activate any products until this mapping is provided.**
+
+---
+
 ## 🎯 Context
 
 You are Claude Code, working on a live Next.js 14 / Supabase / Vercel project called **WelshDog Designs**, deployed at https://welshdog.shop.
