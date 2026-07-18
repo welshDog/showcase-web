@@ -1,0 +1,12 @@
+# HyperFocus Z0ne repo manifest - read by scripts/gen_repo_map.py
+# Edit this file, then re-run the generator. Never hand-edit the map.
+
+name: "showcase-web"
+emoji: "🌐"
+tagline: "Public showcase + registry UI"
+category: "web"
+stack: "Next.js"
+first_doc: "README.md"
+tier: "BUILDING"
+url: ""
+notes: "default branch is `master`, not main"
